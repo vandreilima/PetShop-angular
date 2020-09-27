@@ -1,0 +1,35 @@
+<div class="Container">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="fornecedor">Nome do Fornecedor</label>
+                <input type="text" #nomeFornecedor class="form-control" id="fornecedor">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="endereco">Endereço</label>
+                <input type="text" #enderecoFornecedor class="form-control" id="endereco">
+            </div>
+        </div>
+    </form>
+    <form>
+
+    </form>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="obs">Observação</label>
+                <input type="text" #obeservacao class="form-control" id="obs">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="tipoProduto">Tipo do Produto</label>
+                <p>
+                    <select id="categoria" name="categoria">
+              <option selected="selected" #tipoProduto disabled="disabled"><span class="span">Categoria</span></option>
+              <option *ngFor="let categoria of categoria"  [value]="categoria.tipoProduto"><span class="span">{{categoria.tipoProduto}}</span></option>
+            </select>
+                </p>
+            </div>
+            <button type="button" (click)="cadastrar(nomeFornecedor.value,enderecoFornecedor.value,obeservacao.value,tipoProduto.value)" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
+</div>

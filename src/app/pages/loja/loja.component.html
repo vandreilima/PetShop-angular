@@ -1,0 +1,12 @@
+<app-header titulo1="Home" titulo2="Loja" titulo3="Serviços">
+</app-header>
+<div class="Wapper">
+    <div class="Conteiner">
+        <app-filtro-grid></app-filtro-grid>
+        <div class="girdLoja">
+            <div *ngFor="let produtos of produtos">
+                <app-gird-card [nomeProduto]="produtos.nome" [descricaoProduto]="produtos.descricao" [valorProduto]="produtos.valor"></app-gird-card>
+            </div>
+        </div>
+    </div>
+</div>

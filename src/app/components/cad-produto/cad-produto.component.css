@@ -1,0 +1,26 @@
+.Container {
+  margin: 20px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+select {
+  border: none;
+  padding: 5px;
+  outline: 0;
+  letter-spacing: .15em;
+  border-radius: 0;
+}
+
+option {
+  border: none;
+  padding: 5px;
+  outline: 0;
+  letter-spacing: .15em;
+  border-radius: 0;
+}
+
+.span {
+  letter-spacing: .15em;
+}
