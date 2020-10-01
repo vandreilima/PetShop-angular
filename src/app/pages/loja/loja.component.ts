@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LojaComponent implements OnInit {
 
+  
+
+
   produtos: any = [
     {
       nome: "Pote de ração",
