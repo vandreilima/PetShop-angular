@@ -3,6 +3,17 @@
 
     <form>
         <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="categoria">Categorias Cadastradas</label>
+            <p>
+                <select id="filters"  name="filters">
+                <option selected="selected" disabled="disabled"><span class="span">Categorias</span></option>
+                <option *ngFor="let filters of filters" [value]="filters.name"><span class="span">{{filters.name}}</span></option>
+                </select>
+            </p>
+        </div>
+    </div>
+        <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="categoria">Tipo de Categoria</label>
                 <input type="text" #categoria class="form-control" id="categoria">
@@ -13,7 +24,7 @@
                     <p>
                         <select id="Produtos" #unidadeMedida name="Produtos">
                         <option selected="selected" disabled="disabled"><span class="span">Unidade de Medida</span></option>
-                        <option *ngFor="let unidadeMedida of unidadeMedida" value="volvo"><span class="span">{{unidadeMedida.unidadeMedida}}</span></option>
+                        <option *ngFor="let un of un" [value]="un.name"><span class="span">{{un.name}}</span></option>
                         </select>
                     </p>
                 </div>

@@ -1,11 +1,22 @@
 <div class="Container">
     <form>
         <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="nomeProduto">Produto Já Cadastrado</label>
+            <p>
+              <select (change)="procudtSelect(productSelect.value, nomeProduto,tipoProduto,fornecedor,valor,quantidade)" id="products" #productSelect name="Produtos">
+              <option selected="selected" disabled="disabled"><span class="span">Produtos</span></option>
+              <option *ngFor="let product of products" [value]="product.id"><span class="span">{{product.name}}</span></option>
+            </select>
+            </p>
+        </div>
+        </div>
+        <br/>
+        <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="nomeProduto">Nome do Produto</label>
                 <input type="text" #nomeProduto class="form-control" id="nomeProduto">
             </div>
-
         </div>
     </form>
     <form>
@@ -15,7 +26,7 @@
                 <p>
                     <select id="categoria" #tipoProduto name="Produtos">
                   <option selected="selected" disabled="disabled"><span class="span">Categoria</span></option>
-                  <option *ngFor="let categoria of categoria" [value]="categoria.tipoProduto"><span class="span">{{categoria.tipoProduto}}</span></option>
+                  <option *ngFor="let filters of filters" [value]="filters.name"><span class="span">{{filters.name}}</span></option>
                 </select>
                 </p>
             </div>
@@ -24,7 +35,7 @@
                 <p>
                     <select id="Fornecedor" #fornecedor name="Fornecedor">
                 <option selected="selected" disabled="disabled"><span class="span">Categoria</span></option>
-                <option *ngFor="let fornecedores of fornecedores" [value]="fornecedores.nomeFornecedor"><span class="span">{{fornecedores.nomeFornecedor}}</span></option>
+                <option *ngFor="let privider of prividers" [value]="privider.name"><span class="span">{{privider.name}}</span></option>
               </select>
                 </p>
             </div>
@@ -40,8 +51,10 @@
                 <label for="quantidade">Qauntidade</label>
                 <input type="number" #quantidade class="form-control" id="quantidade">
             </div>
-
             <button type="button" (click)="cadastrar(nomeProduto.value,tipoProduto.value,fornecedor.value,valor.value,quantidade.value)" class="btn btn-primary">Cadastrar</button>
         </div>
     </form>
+    <svg width="60" height="40" viewBox="0 0 16 20" class="bi bi-arrow-left-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+   </svg>
 </div>

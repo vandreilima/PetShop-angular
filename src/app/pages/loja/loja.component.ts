@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { Product } from '../../models/productcd'
+import { CadProductService } from '../../services/cad-product.service'
 
 @Component({
   selector: 'app-loja',
@@ -7,40 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LojaComponent implements OnInit {
 
-  
+  products: Product[]
+  type: string = ''
 
+  filterCheck: any = ''
 
-  produtos: any = [
-    {
-      nome: "Pote de ração",
-      descricao: "Pote de ração bonito de 450gr.",
-      valor: 19.99
-    },
-    {
-      nome: "Casa",
-      descricao: "Casinha para cachorro.",
-      valor: 19.99
-    },
-    {
-      nome: "Pote de ração",
-      descricao: "Pote de ração bonito de 450gr.",
-      valor: 19.99
-    },
-    {
-      nome: "Pote de ração",
-      descricao: "Pote de ração bonito de 450gr.",
-      valor: 19.99
-    },
-    {
-      nome: "Pote de ração",
-      descricao: "Pote de ração bonito de 450gr.",
-      valor: 19.99
-    },
-  ]
-
-  constructor() { }
+  constructor(private cadProducts: CadProductService) { }
 
   ngOnInit() {
+    this.getProducts()
   }
+
+  getProducts() {
+    this.cadProducts.getProducts().subscribe((pruduct: Product[]) => {
+      this.products = pruduct;
+    });
+  }
+
+
+
+  filterChecked(filter) {
+  
+    this.type = filter
+    console.log(this.products)
+  }
+
+
+
 
 }

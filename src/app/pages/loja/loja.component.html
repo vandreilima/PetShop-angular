@@ -2,10 +2,12 @@
 </app-header>
 <div class="Wapper">
     <div class="Conteiner">
-        <app-filtro-grid></app-filtro-grid>
+        <app-filtro-grid (filterCheck)="filterChecked($event)"  ></app-filtro-grid>
         <div class="girdLoja">
-            <div *ngFor="let produtos of produtos">
-                <app-gird-card [nomeProduto]="produtos.nome" [descricaoProduto]="produtos.descricao" [valorProduto]="produtos.valor"></app-gird-card>
+            <div *ngFor="let product of products">
+                <div *ngIf="product.typeProduct == type">
+                <app-gird-card [nomeProduto]="product.name" [descricaoProduto]="product.name" [valorProduto]="product.price"></app-gird-card>
+                </div>
             </div>
         </div>
     </div>

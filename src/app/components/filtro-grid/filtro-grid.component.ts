@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 
+import {Filter} from '../../models/filter'
+import {CadFilterService} from '../../services/cad-filter.service'
 @Component({
   selector: 'app-filtro-grid',
   templateUrl: './filtro-grid.component.html',
@@ -7,45 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltroGridComponent implements OnInit {
 
+  @Output() filterCheck = new EventEmitter()
 
+  filtroEscolhido: number
 
+  filters: Filter[]
 
-  filtroEscolhido: string = ''
+  constructor(private cadFilterApi: CadFilterService) { }
 
-  filtros: any = [
-    {
-      nomeFiltro: "Comida",
+  ngOnInit() {
+    this.getFilters()
+  }
 
-    },
-    {
-      nomeFiltro: "Acessorios",
+  getFilters() {
+    this.cadFilterApi.getFilters().subscribe((filter:Filter[]) => {
+      this.filters = filter;
+    });
+  }
 
-    },
-    {
-      nomeFiltro: "Brinquedos",
-
-    },
-    {
-      nomeFiltro: "Caminhas",
-
-    },
-    {
-      nomeFiltro: "Produtos de Higiene",
-
-    },
-
-  ]
 
 
   filtroSelecionado(filtro) {
     this.filtroEscolhido = filtro
-
+    this.filterCheck.emit(this.filtroEscolhido)
   }
-
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  
 
 }

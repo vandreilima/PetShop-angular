@@ -1,0 +1,41 @@
+{
+  "pruduct": [
+    {
+      "id": 53,
+      "name": "Ração Nobre",
+      "typeProduct": "Alimentos",
+      "providerProduct": "Treee Dog",
+      "amount": "1000",
+      "price": "25.90"
+    },
+    {
+      "id": 64,
+      "name": "Coleira de Couro Prata",
+      "typeProduct": "Acessórios",
+      "providerProduct": "Treee Dog",
+      "amount": "10000",
+      "price": "60.75"
+    }
+  ],
+  "filter": [
+    {
+      "id": 55,
+      "name": "Alimentos",
+      "un": "Unidade de Medida"
+    },
+    {
+      "id": 56,
+      "name": "Acessórios",
+      "un": "KG"
+    }
+  ],
+  "provider": [
+    {
+      "id": 54,
+      "name": "Treee Dog",
+      "street": "Sao paulo",
+      "obs": "Primeiro Fornecedor",
+      "typeProduct": "Categoria"
+    }
+  ]
+}

@@ -19,6 +19,8 @@ export class MenuHeaderComponent implements OnInit {
 
     this.filtroEscolhido = filtro
 
+    this.abrir()
+
   }
 
 

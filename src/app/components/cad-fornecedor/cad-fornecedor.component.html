@@ -2,6 +2,17 @@
     <form>
         <div class="form-row">
             <div class="form-group col-md-6">
+                <label for="tipoProduto">Fornecedores Cadastrados</label>
+                <p>
+                    <select id="categoria" name="categoria">
+              <option selected="selected" #tipoProduto disabled="disabled"><span class="span">Fornecedores</span></option>
+              <option *ngFor="let Providers of Providers"  [value]="Providers.name"><span class="span">{{Providers.name}}</span></option>
+            </select>
+                </p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
                 <label for="fornecedor">Nome do Fornecedor</label>
                 <input type="text" #nomeFornecedor class="form-control" id="fornecedor">
             </div>
@@ -25,7 +36,7 @@
                 <p>
                     <select id="categoria" name="categoria">
               <option selected="selected" #tipoProduto disabled="disabled"><span class="span">Categoria</span></option>
-              <option *ngFor="let categoria of categoria"  [value]="categoria.tipoProduto"><span class="span">{{categoria.tipoProduto}}</span></option>
+              <option *ngFor="let filters of filters"  [value]="filters.name"><span class="span">{{filters.name}}</span></option>
             </select>
                 </p>
             </div>
