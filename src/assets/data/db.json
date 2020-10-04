@@ -1,41 +1,37 @@
 {
-  "pruduct": [
+  "pruduct": [{
+      "id": 55,
+      "name": "Ração Premiun",
+      "typeProduct": "Alimentos",
+      "providerProduct": "Treee Dog",
+      "amount": "1000",
+      "price": "90"
+    },
     {
       "id": 53,
       "name": "Ração Nobre",
       "typeProduct": "Alimentos",
       "providerProduct": "Treee Dog",
       "amount": "1000",
-      "price": "25.90"
-    },
-    {
-      "id": 64,
-      "name": "Coleira de Couro Prata",
-      "typeProduct": "Acessórios",
-      "providerProduct": "Treee Dog",
-      "amount": "10000",
-      "price": "60.75"
+      "price": "20.90"
     }
   ],
-  "filter": [
-    {
+  "filter": [{
       "id": 55,
       "name": "Alimentos",
-      "un": "Unidade de Medida"
+      "un": "KG"
     },
     {
       "id": 56,
       "name": "Acessórios",
-      "un": "KG"
+      "un": "Peça"
     }
   ],
-  "provider": [
-    {
-      "id": 54,
-      "name": "Treee Dog",
-      "street": "Sao paulo",
-      "obs": "Primeiro Fornecedor",
-      "typeProduct": "Categoria"
-    }
-  ]
+  "provider": [{
+    "id": 54,
+    "name": "Treee Dog",
+    "street": "Sao paulo",
+    "obs": "Primeiro Fornecedor",
+    "typeProduct": "Categoria"
+  }]
 }

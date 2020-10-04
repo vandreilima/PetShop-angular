@@ -1,5 +1,5 @@
 .Conteiner {
-  background-color: whitesmoke;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.38));
   border-radius: 4px;
   width: 100%;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -9,9 +9,9 @@
 .girdLoja {
   display: grid;
   /* autoprefixer: off */
-  grid-template-columns: repeat( auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   grid-gap: 20px;
-  background-color: rgb(133, 131, 131);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38));
   padding: 13px;
   margin-top: 0;
 }

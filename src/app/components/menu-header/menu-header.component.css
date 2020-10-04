@@ -3,7 +3,8 @@ ng-sidebar-container {
 }
 
 ::ng-deep .ng-sidebar {
-  background-color: rgba(232, 228, 228, 0.919);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.10));
+
   width: 300px;
   box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
 }

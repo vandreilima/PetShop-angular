@@ -1,19 +1,15 @@
 <div class="ui red secondary  menu">
-    <a [routerLink]="['']" routerLinkActive="router-link-active" erLinkActive="router-link-active" class="item">
-  {{titulo1}}
-</a>
-    <a [routerLink]="['loja']" class="item">
-      {{titulo2}}
-</a>
-    <a [routerLink]="['serviços']" class="item">
-      {{titulo3}}
-</a>
     <div class="right menu">
         <div class="item">
-            <div class="ui icon input">
-                <input type="text" placeholder="Search...">
-                <i class="search link icon"></i>
-            </div>
+            <a [routerLink]="['']" class="item">
+                {{titulo1}}
+            </a>
+            <a [routerLink]="['loja']" class="item">
+                {{titulo2}}
+            </a>
+            <a [routerLink]="['service']" class="item">
+                {{titulo3}}
+            </a>
         </div>
     </div>
 </div>

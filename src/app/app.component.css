@@ -1,9 +1,35 @@
 .root {
-  background: tomato;
-  background-size: 100%;
+  background: linear-gradient(45deg, #012840, #FF7E70, #FFAE3D, #1F8E7E, #D5E0DB);
+  background-size: 350% 350%;
   position: relative;
   height: 100%;
   width: 100%;
+  animation: colors 15s ease infinite;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
+
+}
+
+
+.root h1 h2 h3 h4 h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
 }
 
 .esconder {

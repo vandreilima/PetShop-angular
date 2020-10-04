@@ -18,6 +18,7 @@ import { CadFiltroComponent } from './components/cad-filtro/cad-filtro.component
 import { CadFornecedorComponent } from './components/cad-fornecedor/cad-fornecedor.component';
 import { NgbAlertModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { ServicesComponent } from './pages/services/services.component';
 
 
 
@@ -35,14 +36,14 @@ import { HttpClientModule } from '@angular/common/http';
     MenuHeaderComponent,
     CadProdutoComponent,
     CadFiltroComponent,
-    CadFornecedorComponent
+    CadFornecedorComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
     SidebarModule.forRoot(),
-
     NgbPaginationModule, NgbAlertModule
 
   ],

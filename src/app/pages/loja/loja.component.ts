@@ -11,6 +11,7 @@ import { CadProductService } from '../../services/cad-product.service'
 export class LojaComponent implements OnInit {
 
   products: Product[]
+  productsSelect: Product[]
   type: string = ''
 
   filterCheck: any = ''
@@ -27,15 +28,23 @@ export class LojaComponent implements OnInit {
     });
   }
 
-
-
   filterChecked(filter) {
-  
+
+    this.getProducts()
+
     this.type = filter
-    console.log(this.products)
+
+    console.log(1, this.products)
+
+    var product = this.products.map(product => {
+      if (product.typeProduct !== filter) {
+        this.products.splice(this.products.indexOf(product), 1)
+      }
+    })
+    console.log(2, this.products)
+
+    this.productsSelect = []
+
+    this.productsSelect = this.products
   }
-
-
-
-
 }

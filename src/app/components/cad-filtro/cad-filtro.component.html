@@ -1,18 +1,28 @@
 <div class="Container">
-
-
     <form>
         <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="categoria">Categorias Cadastradas</label>
-            <p>
-                <select id="filters"  name="filters">
-                <option selected="selected" disabled="disabled"><span class="span">Categorias</span></option>
-                <option *ngFor="let filters of filters" [value]="filters.name"><span class="span">{{filters.name}}</span></option>
-                </select>
-            </p>
+            <div class="form-group col-md-6">
+                <label for="categoria">Categorias Cadastradas</label>
+                <div class="produt-select">
+                    <p>
+                        <select id="filters" (change)="filterSelect(filter.value,categoria,unidadeMedida)" #filter
+                            name="filters">
+                            <option selected="selected" disabled="disabled"><span class="span">Categorias</span>
+                            </option>
+                            <option *ngFor="let filters of filters" [value]="filters.id"><span
+                                    class="span">{{filters.name}}</span></option>
+                        </select>
+                    </p>
+                    <div (click)="deleteProduct(productSelect.value)" class="icon">
+                        <svg width="45" height="30" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="categoria">Tipo de Categoria</label>
@@ -23,13 +33,15 @@
                     <label for="categoria">Unidade de Medida</label>
                     <p>
                         <select id="Produtos" #unidadeMedida name="Produtos">
-                        <option selected="selected" disabled="disabled"><span class="span">Unidade de Medida</span></option>
-                        <option *ngFor="let un of un" [value]="un.name"><span class="span">{{un.name}}</span></option>
+                            <option selected="selected" disabled="disabled"><span class="span">Unidade de Medida</span>
+                            </option>
+                            <option *ngFor="let un of un" [value]="un.name"><span class="span">{{un.name}}</span>
+                            </option>
                         </select>
                     </p>
                 </div>
             </div>
-            <button type="button" (click)="cadastrar(categoria.value,unidadeMedida.value)" class="btn btn-primary">Cadastrar</button>
+            <button type="button" (click)="cadastrar(categoria.value,unidadeMedida.value)">Cadastrar</button>
         </div>
     </form>
 </div>
