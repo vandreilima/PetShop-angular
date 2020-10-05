@@ -1,4 +1,3 @@
-<app-header titulo1="Home" titulo2="Loja" titulo3="Serviços"></app-header>
 <div class="Wapper">
     <div class="Conteiner">
         <app-filtro-grid (filterCheck)="filterChecked($event)"></app-filtro-grid>
@@ -8,7 +7,7 @@
             </p>
             <div *ngFor="let product of productsSelect">
                 <div *ngIf="product.typeProduct == type">
-                    <app-gird-card [nomeProduto]="product.name" [descricaoProduto]="product.name" [valorProduto]="product.price"></app-gird-card>
+                    <app-gird-card [product]="product" [nomeProduto]="product.name" [descricaoProduto]="product.name" [valorProduto]="product.price"></app-gird-card>
                 </div>
             </div>
         </div>

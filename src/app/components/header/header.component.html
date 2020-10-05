@@ -1,14 +1,22 @@
 <div class="ui red secondary  menu">
     <div class="right menu">
         <div class="item">
-            <a [routerLink]="['']" class="item">
+            <a  routerLink="" class="item">
                 {{titulo1}}
             </a>
-            <a [routerLink]="['loja']" class="item">
+            <a routerLinkActive="active" routerLink="/loja" class="item">
                 {{titulo2}}
             </a>
-            <a [routerLink]="['service']" class="item">
+            <a routerLinkActive="active" routerLink="/service" class="item">
                 {{titulo3}}
+            </a>
+            <a class="cart" (click)="openModal('custom-modal-2');" class="item">
+                <app-icon-cart>
+                <jw-modal id="custom-modal-2">
+                    <app-cart-item></app-cart-item>
+                    <button (click)="closeModal('custom-modal-2');">Close</button>
+                </jw-modal>
+            </app-icon-cart>
             </a>
         </div>
     </div>

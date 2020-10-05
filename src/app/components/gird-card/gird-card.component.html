@@ -5,7 +5,7 @@
         <div class="card-body">
             <h5 class="card-title"> {{nomeProduto}} {{titulo1}} </h5>
             <p class="card-text"> {{descricaoProduto}} </p>
-            <button href="#">Comprar</button><span class="preco">
+            <button (click)="addTocard()">Comprar</button><span class="preco">
                 {{valorProduto | currency:'R$:' }}</span>
         </div>
     </div>

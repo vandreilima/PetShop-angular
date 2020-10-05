@@ -19,6 +19,10 @@ import { CadFornecedorComponent } from './components/cad-fornecedor/cad-forneced
 import { NgbAlertModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './pages/services/services.component';
+import { IconCartComponent } from './components/icon-cart/icon-cart.component';
+import { ModalCartComponent } from './components/modal-cart/modal-cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+
 
 
 
@@ -37,7 +41,11 @@ import { ServicesComponent } from './pages/services/services.component';
     CadProdutoComponent,
     CadFiltroComponent,
     CadFornecedorComponent,
-    ServicesComponent
+    ServicesComponent,
+    IconCartComponent,
+    ModalCartComponent,
+    CartItemComponent,
+    
   ],
   imports: [
     BrowserModule,
