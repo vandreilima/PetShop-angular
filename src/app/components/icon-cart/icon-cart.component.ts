@@ -15,19 +15,14 @@ export class IconCartComponent implements OnInit {
   iten: any
 
   ngOnInit(): void {
- 
+
     this.cartService.cartUpdate$.subscribe((observable) => this.getItens())
   }
 
   getItens() {
-    
-  
+
     this.iten = this.cartService.getCart()
-     
     this.amount = this.iten.length
-
-
-   
   }
 
 }

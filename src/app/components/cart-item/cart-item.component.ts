@@ -14,7 +14,7 @@ export class CartItemComponent  {
 
   itens: any
 
-  totalCart:any
+  totalCart:number = 0
 
   destroy$:Subject<void> = new Subject<void>()
 
@@ -32,7 +32,9 @@ export class CartItemComponent  {
 
     this.itens = this.cartService.getCart()
 
-    this.itens.map((iten) => {
+    this.totalCart = 0
+
+    this.itens.map(iten => {
       
       this.totalCart = this.totalCart + (iten.price*iten.amountItens)
 

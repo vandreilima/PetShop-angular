@@ -24,7 +24,7 @@
         <input class="iten-input" style="text-align:right" type="number" [value]="iten.price" readonly />
     </div>
     <div class="iten-edit">
-        <span class="total">{{iten.price * iten.amountItens | currency:'R$:'}}</span>
+        <span class="total">{{(iten.price * iten.amountItens) | currency:'R$:'}}</span>
    
         <div class="icon" (click)="removeItem(iten)">
             <svg width="30" height="20" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -35,4 +35,4 @@
     </div>
 </div>
 </div>
-<span class="totalCart">{{totalCart}}</span>
+<span class="totalCart">Total Carrinho  {{totalCart | currency:'R$:'}}</span>
