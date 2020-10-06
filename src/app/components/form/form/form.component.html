@@ -1,0 +1,42 @@
+<div class="Conteiner_vl">
+  <div class="body-form">
+    <form class="form" [formGroup]="forme">
+      <input id="height" matInput [textMask]="{mask: height}" [(ngModel)]="myModel" formControlName="height"
+        placeholder="Altura" class="" />
+      <input id="Weight" matInput [textMask]="{mask: Weight}" [(ngModel)]="myMode2" formControlName="Weight"
+        placeholder="Peso" class="" />
+      <input id="age" matInput [textMask]="{mask: age}" [(ngModel)]="myMode3" formControlName="age" placeholder="Idade"
+        class="" />
+      <select id="sexy" formControlName="sexy">
+        <option selected="selected" disabled="disabled"><span class="span1">Sexo Biologico</span></option>
+        <option *ngFor="let sexy of sexys" [value]="sexy.id"><span class="span1">{{sexy.name}}</span>
+        </option>
+      </select>
+      <select id="optionTreiner" formControlName="optionTreine">
+        <option selected="selected" disabled="disabled"><span class="span1">Nivel de Intensidade de Treino</span>
+        </option>
+        <option *ngFor="let option of optionTreiner" [value]="option.id"><span class="span1">{{option.name}}</span>
+        </option>
+      </select>
+      <select id="objetives" formControlName="objective">
+        <option selected="selected" disabled="disabled"><span class="span1">Objetivo</span></option>
+        <option *ngFor="let objeticve of objetives" [value]="objeticve.id"><span class="span1">{{objeticve.name}}</span>
+        </option>
+      </select>
+    </form>
+    <button (click)="calc()"><span>CALCULAR</span> </button>
+  </div>
+  <span>Total de calorias que voce precisa comer por dia</span>
+  <span>Taxa Metabolica Basal: </span>
+  <div class="mes">
+    <P>
+      <span>Primeiro mes: {{caloriaPrimeiraMes}}</span>
+    </P>
+    <P>
+      <span>Segundo Mes mes: {{caloriaSegundoMes}}</span>
+    </P>
+    <P>
+      <span>Terceiro Mes mes: {{caloriaTerceiroMes}}</span>
+    </P>
+  </div>
+</div>

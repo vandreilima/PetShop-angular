@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router'
 import { ModuleWithProviders } from '@angular/core';
 
+import { NutriScriptComponent } from './pages/nutri-script/nutri-script.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LojaComponent } from './pages/loja/loja.component';
@@ -12,7 +13,8 @@ const APP_ROTAS: Routes = [
   { path: 'loja', component: LojaComponent },
   { path: 'login', component: LoginComponent },
   { path: 'administração', component: MenuComponent },
-  { path: 'service', component: ServicesComponent }
+  { path: 'service', component: ServicesComponent },
+  { path: 'Nutriscript', component: NutriScriptComponent }
 ]
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROTAS)

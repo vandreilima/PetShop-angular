@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit,OnDestroy {
   @Input() titulo1 = ""
   @Input() titulo2 = ""
   @Input() titulo3 = ""
-
+  @Input() titulo4 = ""
 
   bodyText: string;
 

@@ -12,6 +12,7 @@ import { Product } from '../models/productcd';
 export class CadProductService {
 
   url = 'http://localhost:3000/pruduct'
+  urlPointer = 'http://localhost:3000/lestIdProduct'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,6 +22,13 @@ export class CadProductService {
 
   getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.url)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
+  getLestIdFilter(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.urlPointer)
       .pipe(
         retry(2),
         catchError(this.handleError))
@@ -38,6 +46,14 @@ export class CadProductService {
     return this.httpClient.post<Product>(this.url, JSON.stringify(product), this.httpOptions)
       .pipe(
         retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  updateId(newId): Observable<Product> {
+    return this.httpClient.put<Product>(this.url + '/' + 1, JSON.stringify(newId), this.httpOptions)
+      .pipe(
+        retry(1),
         catchError(this.handleError)
       )
   }

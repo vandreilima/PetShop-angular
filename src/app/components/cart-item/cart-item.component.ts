@@ -24,7 +24,7 @@ export class CartItemComponent  {
   }
 
   ngOnInit() {
-   
+
       this.cartService.cartUpdate$.pipe(takeUntil(this.destroy$)).subscribe((observable) => {this.calcTotalCart()})
   }
 
@@ -35,7 +35,7 @@ export class CartItemComponent  {
     this.totalCart = 0
 
     this.itens.map(iten => {
-      
+
       this.totalCart = this.totalCart + (iten.price*iten.amountItens)
 
     })
@@ -43,7 +43,7 @@ export class CartItemComponent  {
   }
 
   plus(item) {
-  
+
     this.cartService.addAmountIten(item)
   }
 

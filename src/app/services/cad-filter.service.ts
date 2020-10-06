@@ -12,12 +12,21 @@ import { Filter } from '../models/filter';
 export class CadFilterService {
 
   url = 'http://localhost:3000/filter'
+  urlPointer = 'http://localhost:3000/lestIdFilter'
 
   constructor(private  httpClient:HttpClient) { }
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
+
+  getLestIdFilter(): Observable<Filter[]> {
+    return this.httpClient.get<Filter[]>(this.urlPointer)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
 
 getFilters(): Observable<Filter[]> {
   return this.httpClient.get<Filter[]>(this.url)
@@ -38,6 +47,14 @@ cadFilter(filter: Filter): Observable<Filter> {
   return this.httpClient.post<Filter>(this.url, JSON.stringify(filter), this.httpOptions)
     .pipe(
       retry(2),
+      catchError(this.handleError)
+    )
+}
+
+updateId(newId): Observable<Filter> {
+  return this.httpClient.put<Filter>(this.url + '/' + 1, JSON.stringify(newId), this.httpOptions)
+    .pipe(
+      retry(1),
       catchError(this.handleError)
     )
 }

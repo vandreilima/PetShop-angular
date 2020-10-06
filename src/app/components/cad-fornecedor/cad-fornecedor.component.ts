@@ -15,6 +15,8 @@ export class CadFornecedorComponent implements OnInit {
   Providers: Provider[]
   cadCheck: any
   filters: Filter[]
+  lestId:any
+  newId: number
 
   constructor(private cadFilterApi: CadFilterService, private cadProviderApi: CadProviderService) { }
 
@@ -36,15 +38,18 @@ export class CadFornecedorComponent implements OnInit {
   }
 
   cadProvider(privider: Provider) {
-
     this.cadCheck = this.Providers.findIndex(p => p.id === privider.id)
     if (this.cadCheck >= 0) {
       this.cadProviderApi.updateProvider(privider).subscribe(() => { });
     } else {
       this.cadProviderApi.cadProvider(privider).subscribe(() => { });
     }
-  }
 
+    this.lestId[0].lestid = this.lestId[0].lestid + 1
+
+    this.cadProviderApi.updateId(this.lestId).subscribe(() => { });
+
+  }
 
   getProviderById(id: number, nameProvider, addressProvider, obs, typeProduct) {
 
@@ -72,8 +77,14 @@ export class CadFornecedorComponent implements OnInit {
   }
 
   cadastrar(nameProvider, streetProvider, obeservacaoFornecedor, typeProduct) {
+    this.cadProviderApi
+    .getLestIdFilter().subscribe((filterId) => {
+      this.lestId = filterId;
+      this.newId = this.lestId[0].lestid + 1
+    });
+
     this.provider = {
-      id: 45 + nameProvider.length,
+      id: this.newId,
       name: nameProvider,
       street: streetProvider,
       obs: obeservacaoFornecedor,

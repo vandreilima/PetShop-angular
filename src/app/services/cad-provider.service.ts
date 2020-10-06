@@ -12,6 +12,7 @@ import { Provider } from '../models/provider';
 export class CadProviderService {
 
   url = 'http://localhost:3000/provider'
+  urlPointer = 'http://localhost:3000/lestIdProvider'
 
   constructor(private  httpClient:HttpClient) { }
 
@@ -30,6 +31,21 @@ getProviderById(id: number): Observable<Provider> {
   return this.httpClient.get<Provider>(this.url + '/' + id)
     .pipe(
       retry(2),
+      catchError(this.handleError)
+    )
+}
+
+getLestIdFilter(): Observable<Provider[]> {
+  return this.httpClient.get<Provider[]>(this.urlPointer)
+    .pipe(
+      retry(2),
+      catchError(this.handleError))
+}
+
+updateId(newId): Observable<Provider> {
+  return this.httpClient.put<Provider>(this.url + '/' + 1, JSON.stringify(newId), this.httpOptions)
+    .pipe(
+      retry(1),
       catchError(this.handleError)
     )
 }

@@ -14,6 +14,8 @@ export class CadFiltroComponent implements OnInit {
   filter = {} as Filter;
   filters: Filter[]
   cadCheck: number;
+  lestId:any
+  newId: number
 
   constructor(private cadFilterApi: CadFilterService) { }
 
@@ -22,13 +24,18 @@ export class CadFiltroComponent implements OnInit {
   }
 
   cadastrar(nameFilter, UnidadeMedida) {
+    this.cadFilterApi.getLestIdFilter().subscribe((filterId) => {
+      this.lestId = filterId;
+      this.newId = this.lestId[0].lestid + 1
+    });
 
     this.filter = {
-      id: 46 + nameFilter.length,
+      id:  this.newId,
       name: nameFilter,
       un: UnidadeMedida
     }
     this.cadFilters(this.filter)
+
   }
 
   deleteProduct(id: number) {
@@ -44,9 +51,6 @@ export class CadFiltroComponent implements OnInit {
   cadFilters(filter: Filter) {
 
     this.cadCheck = this.filters.findIndex(p => p.id === filter.id)
-
-    alert(this.cadCheck)
-
     if (this.cadCheck >= 0) {
       this.cadFilterApi.updateFilter(filter).subscribe(() => { });
       alert(1)
@@ -55,6 +59,9 @@ export class CadFiltroComponent implements OnInit {
       this.cadFilterApi.cadFilter(filter).subscribe(() => { });
     }
 
+    this.lestId[0].lestid = this.lestId[0].lestid + 1
+
+    this.cadFilterApi.updateId(this.lestId).subscribe(() => { });
 
   }
 

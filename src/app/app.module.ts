@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SidebarModule } from 'ng-sidebar'
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -22,8 +23,11 @@ import { ServicesComponent } from './pages/services/services.component';
 import { IconCartComponent } from './components/icon-cart/icon-cart.component';
 import { ModalCartComponent } from './components/modal-cart/modal-cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
-
-
+import { FormComponent } from './components/form/form/form.component';
+import { TextMaskModule } from 'angular2-text-mask';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NutriScriptComponent } from './pages/nutri-script/nutri-script.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -45,14 +49,24 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     IconCartComponent,
     ModalCartComponent,
     CartItemComponent,
-    
+    FormComponent,
+    NutriScriptComponent,
+
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
     SidebarModule.forRoot(),
-    NgbPaginationModule, NgbAlertModule
+    TextMaskModule,
+    FormsModule,
+    NgbPaginationModule, NgbAlertModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
+
 
   ],
   providers: [],

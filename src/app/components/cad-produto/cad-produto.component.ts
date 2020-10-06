@@ -21,6 +21,15 @@ export class CadProdutoComponent implements OnInit {
   prividers: Provider[]
   nomeProduto: any;
   cadCheck: number;
+  lestId:any
+  newId: number
+
+  public myModel = ''
+  public myMode2 = ''
+  public myMode3 = ''
+  public price = [ /[0-9]/,/[0-9]/,/[0-9]/, '.', /[0-9]/, /[0-9]/]
+  public quantidade = [ /[0-9]/,/[0-9]/,/[0-9]/, '.', /[0-9]/, /[0-9]/]
+
 
   constructor(
     private cadProducts: CadProductService,
@@ -39,8 +48,14 @@ export class CadProdutoComponent implements OnInit {
   }
 
   cadastrar(nomeProduto, tipoProduto, fornecedor, valor, quantidade) {
+    this.cadProducts
+    .getLestIdFilter().subscribe((filterId) => {
+      this.lestId = filterId;
+      this.newId = this.lestId[0].lestid + 1
+    });
+
     this.product = {
-      id: 42 + nomeProduto.length,
+      id: this.newId,
       name: nomeProduto,
       typeProduct: tipoProduto,
       providerProduct: fornecedor,
@@ -76,6 +91,10 @@ export class CadProdutoComponent implements OnInit {
     } else {
       this.cadProducts.cadProduct(product).subscribe(() => { });
     }
+    this.lestId[0].lestid = this.lestId[0].lestid + 1
+
+    this.cadProducts.updateId(this.lestId).subscribe(() => { });
+
   }
 
   getProviders() {

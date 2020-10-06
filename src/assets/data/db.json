@@ -1,74 +1,76 @@
 {
-    "pruduct": [{
-            "id": 55,
-            "name": "Ração Premiun",
-            "typeProduct": "Alimentos",
-            "providerProduct": "Treee Dog",
-            "amount": "1000",
-            "price": "90"
-        },
-        {
-            "id": 53,
-            "name": "Ração Nobre",
-            "typeProduct": "Alimentos",
-            "providerProduct": "Treee Dog",
-            "amount": "1000",
-            "price": "20.90"
-        },
-        {
-            "id": 54,
-            "name": "Ração Nobre n1",
-            "typeProduct": "Alimentos",
-            "providerProduct": "Treee Dog",
-            "amount": "1000",
-            "price": "20.90"
-        },
-        {
-            "id": 55,
-            "name": "Ração Nobre n2",
-            "typeProduct": "Alimentos",
-            "providerProduct": "Treee Dog",
-            "amount": "1000",
-            "price": "20.90"
-        },
-        {
-            "id": 56,
-            "name": "Ração Nobre n3",
-            "typeProduct": "Alimentos",
-            "providerProduct": "Treee Dog",
-            "amount": "1000",
-            "price": "20.90"
-        }
-    ],
-    "filter": [{
-            "id": 55,
-            "name": "Alimentos",
-            "un": "KG"
-        },
-        {
-            "id": 56,
-            "name": "Brinquedos",
-            "un": "Peça"
-        },
-        {
-            "id": 61,
-            "name": "Brinquedos Pets",
-            "un": "Unidade de Medida"
-        }
-    ],
-    "provider": [{
-            "id": 54,
-            "name": "Treee Dog",
-            "street": "Sao paulo",
-            "obs": "Primeiro Fornecedor",
-            "typeProduct": "Alimentos"
-        },
-        {
-            "id": 69,
-            "name": "Agropecuária Cara Branca",
-            "street": "São Mateus do sul",
-            "obs": "Segundo Fornecedor",
-            "typeProduct": "Alimentos"
-        }
-    ]
+  "pruduct": [
+    {
+      "name": "Ração Nobre",
+      "typeProduct": "Alimentos",
+      "providerProduct": "Tonho Rações",
+      "amount": "10000",
+      "price": "25.90",
+      "id": 1
+    },
+    {
+      "name": "Ração Pedigree",
+      "typeProduct": "Alimentos",
+      "providerProduct": "Sao jose",
+      "amount": "10000",
+      "price": "19.90",
+      "id": 2
+    },
+    {
+      "name": "Ração Treee Dog",
+      "typeProduct": "Alimentos",
+      "providerProduct": "Tonho Rações",
+      "amount": "12000",
+      "price": "120.90",
+      "id": 3
+    }
+  ],
+  "lestIdProduct": [
+    {
+      "id": 1,
+      "lestid": 0
+    }
+  ],
+  "filter": [
+    {
+      "name": "Alimentos",
+      "un": "KG",
+      "id": 1
+    }
+  ],
+  "lestIdFilter": [
+    {
+      "id": 1,
+      "lestid": 0
+    }
+  ],
+  "provider": [
+    {
+      "name": "Tonho Rações",
+      "street": "Sao paulo",
+      "obs": "Primeiro Fornecedor",
+      "typeProduct": "Fornecedores",
+      "id": 1
+    },
+    {
+      "name": "Agropecuária Cara Branca",
+      "street": "Sao paulo",
+      "obs": "Segundo Fornecedor",
+      "typeProduct": "Fornecedores",
+      "id": 2
+    },
+    {
+      "name": "Sao jose",
+      "street": "Sao paulo",
+      "obs": "Terceiro Fornecedor",
+      "typeProduct": "Fornecedores",
+      "id": 3
+    }
+  ],
+  "lestIdProvider": [
+    {
+      "id": 1,
+      "lestid": 0
+    }
+  ]
 }

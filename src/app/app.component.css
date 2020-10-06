@@ -34,3 +34,24 @@
 .esconder {
   display: none;
 }
+
+
+.root button {
+  border: 0;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.10));
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+  width: 200px;
+  height: 55px;
+  margin: 30px;
+  animation: colors 15s ease infinite;
+  background-size: 350% 350%;
+  transition: 0.6s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.root button:hover {
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.0);
+  transition: 0.6s;
+}
