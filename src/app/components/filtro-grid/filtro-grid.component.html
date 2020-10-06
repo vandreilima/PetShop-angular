@@ -1,0 +1,7 @@
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let filters of filters">
+            <span [id]="filters.name" #spanSelecionado (click)="filtroSelecionado(spanSelecionado.id)" class="nav-link" [(class.nav-link-active)]="this.filtroEscolhido == spanSelecionado.id" href="#">{{filters.name}}</span>
+        </li>
+    </ul>
+</div>

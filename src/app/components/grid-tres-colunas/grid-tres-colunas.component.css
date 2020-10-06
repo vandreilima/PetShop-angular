@@ -1,0 +1,38 @@
+.foto {
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 10px;
+  transition: 0.6s;
+}
+
+.card:hover {
+  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.02);
+  transition: 0.6s;
+
+}
+
+.card {
+  padding: 10px;
+  transition: 0.6s;
+  border-radius: 3vw 4vw 8vw 2vw;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.38));
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+}
+
+.card span {
+  margin: 10px
+}
+
+.Conteiner_vl {
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 250px 250px 250px;
+  grid-gap: 20px;
+  text-align: center;
+
+}

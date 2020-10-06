@@ -1,0 +1,18 @@
+<div class="Forme">
+    <div class="Forme-a">
+        <form>
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input type="email" class="form-control" id="usuario" aria-describedby="emailHelp" placeholder="Usuario ">
+                <small id="emailHelp " class="form-text text-muted ">Usuario Administrador.</small>
+            </div>
+            <div class="form-group ">
+                <label for="senha ">Senha</label>
+                <input type="password " class="form-control" id="senha" placeholder="Senha ">
+            </div>
+            <div class="botao">
+                <button type="submit" [routerLink]="['/administração']" class="btn btn-primary ">Logar</button>
+            </div>
+        </form>
+    </div>
+</div>

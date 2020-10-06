@@ -1,0 +1,42 @@
+<ng-sidebar-container>
+    <ng-sidebar [opened]="opened">
+        <div class="icone">
+            <svg (click)="abrir()" width="60" height="40" viewBox="0 0 16 20" class="bi bi-arrow-left-square-fill"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z" />
+            </svg>
+        </div>
+        <ul class="lista">
+            <li class="lista-item"><a #spanSelecionado1 id="Produtos"
+                    (click)="filtroSelecionado(spanSelecionado1.id)">Cadastrar Produtos</a></li>
+            <li class="lista-item"><a #spanSelecionado2 id="Filtros"
+                    (click)="filtroSelecionado(spanSelecionado2.id)">Cadastrar Filtros</a></li>
+            <li class="lista-item"><a #spanSelecionado3 id="Cliente"
+                    (click)="filtroSelecionado(spanSelecionado3.id)">Cadastrar Cliente</a></li>
+            <li class="lista-item"><a #spanSelecionado4 id="Fornecedor"
+                    (click)="filtroSelecionado(spanSelecionado4.id)">Cadastrar Fornecedor</a></li>
+        </ul>
+    </ng-sidebar>
+    <div ng-sidebar-content>
+        <div *ngIf="!opened" class="icone">
+            <svg (click)="abrir()" width="60" height="40" viewBox="0 0 16 20" class="bi bi-arrow-right-square-fill"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 8.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z" />
+            </svg>
+        </div>
+        <div id="Produtos" class="esconde" #produto [(class.mostra)]="this.filtroEscolhido == produto.id">
+            <ng-content select=".Produtos"></ng-content>
+        </div>
+        <div id="Filtros" class="esconde" #filtros [(class.mostra)]="this.filtroEscolhido == filtros.id">
+            <ng-content select=".Filtros"></ng-content>
+        </div>
+        <div id="Cliente" class="esconde" #clientes [(class.mostra)]="this.filtroEscolhido == clientes.id">
+            <ng-content select=".Cliente"></ng-content>
+        </div>
+        <div id="Fornecedor" class="esconde" #fornecedor [(class.mostra)]="this.filtroEscolhido == fornecedor.id">
+            <ng-content select=".Fornecedor"></ng-content>
+        </div>
+    </div>
+</ng-sidebar-container>
