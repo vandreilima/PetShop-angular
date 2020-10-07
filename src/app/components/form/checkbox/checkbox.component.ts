@@ -61,6 +61,10 @@ export class CheckboxComponent implements OnInit {
     },
   ];
 
+  comparNumber(number1, number2) {
+    return number1 - number2;
+  }
+
   monthChecked(month) {
     let monthNumber: number = parseInt(month.id);
     let monthChecked = month.checked;
@@ -73,7 +77,7 @@ export class CheckboxComponent implements OnInit {
       console.log(this.index);
     }
 
-    console.log(this.data);
+    this.data.sort(this.comparNumber);
   }
 
   constructor() {}
