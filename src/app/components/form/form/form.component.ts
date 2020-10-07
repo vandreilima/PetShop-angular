@@ -1,7 +1,5 @@
-import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { log } from 'console';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -13,11 +11,13 @@ export class FormComponent implements OnInit {
   public myModel = ''
   public myMode2 = ''
   public myMode3 = ''
-  public height = [/[0-9]/, '.', /[0-9]/, /[0-9]/]
-  public Weight = [/[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/]
-  public age = [/[0-9]/, /[0-9]/]
+  public height = [/\d/, '.', /\d/, /\d/]
+  public Weight = [/\d/, /\d/, /\d/, '.', /\d/, /\d/]
+  public age = [/\d/, /\d/]
 
-
+  caloriaPrimeiraMes: number
+  caloriaSegundoMes: number
+  caloriaTerceiroMes: number
 
   forme: FormGroup
 
@@ -34,7 +34,7 @@ export class FormComponent implements OnInit {
       if (nivelTreino = 2) { nivelTreino = 1.78 }
       if (nivelTreino = 3) { nivelTreino = 2.10 }
 
-      var taxaMetabolicaBasal = 66+ (13.5 * peso) + (5*altura)-(6.8 * idade)
+      var taxaMetabolicaBasal = 66 + (13.5 * peso) + (5 * altura) - (6.8 * idade)
     }
 
     if (sexy = 2) {
@@ -42,45 +42,38 @@ export class FormComponent implements OnInit {
       if (nivelTreino = 2) { nivelTreino = 1.64 }
       if (nivelTreino = 3) { nivelTreino = 1.82 }
 
-      var taxaMetabolicaBasal = 66+ (9.6 * peso) + (1.8*altura)-(4.7 * idade)
+      var taxaMetabolicaBasal = 66 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade)
     }
 
     var GET = taxaMetabolicaBasal * nivelTreino
 
-    if (objetivo=1) {
-      var percentoPrimeiraSemana = GET * 0.30
-      var caloriaPrimeiraSemana = GET - percentoPrimeiraSemana
+    if (objetivo = 1) {
+      var percentoPrimeiraMes = GET * 0.30
+      this.caloriaPrimeiraMes = GET - percentoPrimeiraMes
 
-      var percentoSegundaSemana = GET * 0.36
-      var caloriaSegundaSemana = GET - percentoSegundaSemana
+      var percentoSegundaMes = GET * 0.36
+      this.caloriaSegundoMes = GET - percentoSegundaMes
 
-      var percentoTerceiraSemana = GET * 0.42
-      var caloriaTercaSemana = GET - percentoTerceiraSemana
+      var percentoTerceiraMes = GET * 0.42
+      this.caloriaTerceiroMes = GET - percentoTerceiraMes
     }
 
-    if (objetivo=2) {
-      var percentoPrimeiraSemana = GET * 0.30
-      var caloriaPrimeiraSemana = GET - percentoPrimeiraSemana
+    if (objetivo = 2) {
+      var percentoPrimeiraMes = GET * 0.30
+      this.caloriaPrimeiraMes = GET - percentoPrimeiraMes
 
-      var percentoSegundaSemana = GET * 0.36
-      var caloriaSegundaSemana = GET - percentoSegundaSemana
+      var percentoSegundaMes = GET * 0.36
+      this.caloriaSegundoMes = GET - percentoSegundaMes
 
-      var percentoTerceiraSemana = GET * 0.42
-      var caloriaTercaSemana = GET - percentoTerceiraSemana
+      var percentoTerceiraMes = GET * 0.42
+      this.caloriaTerceiroMes = GET - percentoTerceiraMes
     }
 
-    if (objetivo=3) {
-      var caloriaPrimeiraSemana = GET * 1.09
-      var caloriaSegundaSemana = GET * 1.12
-      var caloriaTercaSemana = GET * 1.17
+    if (objetivo = 3) {
+      this.caloriaPrimeiraMes = GET * 1.09
+      this.caloriaSegundoMes = GET * 1.12
+      this.caloriaTerceiroMes = GET * 1.17
     }
-
-
-    console.log('caloriaPrimeiraSemana',caloriaPrimeiraSemana)
-    console.log('caloriaSegundaSemana',caloriaSegundaSemana)
-    console.log('caloriaTercaSemana',caloriaTercaSemana)
-
-
   }
 
   constructor(private formBuilder: FormBuilder) { }

@@ -28,6 +28,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NutriScriptComponent } from './pages/nutri-script/nutri-script.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CheckboxComponent } from './components/form/checkbox/checkbox.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { AppRoutingModule } from './app-routing.module';
     CartItemComponent,
     FormComponent,
     NutriScriptComponent,
+    CheckboxComponent,
 
   ],
   imports: [

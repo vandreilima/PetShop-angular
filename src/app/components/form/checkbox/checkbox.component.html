@@ -1,0 +1,20 @@
+<div id="card">
+  <h6>ano: 2020</h6>
+  <section>
+    <div *ngFor="let month of months">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          [id]="month.numberMonth"
+          class="custom-control-input"
+          #teste
+          (click)="monthChecked(teste)"
+          [name]="month.name"
+        />
+        <label class="custom-control-label" [for]="month.numberMonth">{{
+          month.name
+        }}</label>
+      </div>
+    </div>
+  </section>
+</div>
